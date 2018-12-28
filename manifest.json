@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "XHR Logger",
+    "version": "1.0",
+    "description": "Build an Extension!",
+    "content_scripts": [
+        {
+            "matches": ["*://developer.mozilla.org/*", "*://developer.jwplayer.com/**"],
+            "js": ["ext.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "background": {
+        "scripts": [
+            "gethar.js"
+        ],
+        "persistent": true
+    },
+    "permissions": ["tabs", "activeTab", "declarativeContent", "webNavigation", "*://developer.mozilla.org/**", "webRequest", "*://developer.jwplayer.com/**"],
+    "page_action": {
+        "default_popup": "popup.html"
+    }
+}
